@@ -14,7 +14,6 @@
         background-image: url(./assets/glitter.gif);
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
         color: papayawhip;
         height: 100vh;
@@ -25,9 +24,23 @@
         top: 10px;
         left: 10px;
       }
+
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+      .blink {
+        animation: blink 1.5s step-start 0s infinite;
+      }
+
+      h1 {
+        background-color: black;
+        padding: 1em;
+      }
     </style>
 
-      <h1>🚧 Under Construction 🚧</h1>
-    <audio autoplay="true" controls src="./assets/e1m1.mp3"></audio>
+    <h1 class="blink">🚧 Under Construction 🚧</h1>
+    <audio autoplay="true" controls="true" src="./assets/e1m1.mp3"></audio>
   </body>
 </html>
