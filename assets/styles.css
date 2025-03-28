@@ -20,7 +20,7 @@ audio {
   }
 }
 .blink {
-  animation: blink 1.5s step-start 0s infinite;
+  animation: blink 3s linear 0s infinite;
 }
 
 h1 {
