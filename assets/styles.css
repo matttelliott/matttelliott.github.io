@@ -14,6 +14,10 @@ audio {
   background: radial-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 
+.color-bright {
+  color: rgba(255, 255, 255, 1);
+}
+
 @keyframes blink {
   50% {
     opacity: 0;
