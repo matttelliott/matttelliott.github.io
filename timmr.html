@@ -87,7 +87,6 @@
         <a href="#about"> About </a>
         <a href="#cats"> Cats </a>
         <a href="#work"> work </a>
-        <a href="#testimonials"> Testimonials </a>
         <a href="#contact"> Contact </a>
       </nav>
 
@@ -116,7 +115,7 @@
               <label class="nav-link active tab-label" for="tab-about">About</label>
           </li>
           <li class="nav-item">
-              <label class="nav-link tab-label" for="option3">Option 3</label>
+              <label class="nav-link tab-label" for="testimonials">Testimonials</label>
           </li>
         </ul>
         
@@ -134,11 +133,16 @@
             <h2>Bad Ass Dude</h2>
           </div>
 
-          <input class="tab-input" type="radio" name="about-tabs" id="option3" value="option3">
+          <input class="tab-input" type="radio" name="about-tabs" id="testimonials" value="testimonials">
           <div class="tab-content slide-from-left">
-            <h1>Option 3</h1>
-            <h2>Bad Ass Dude</h2>
+            <h1>Testimonials</h1>
+            <ul>
+              <li>
+                "Worst Ever. Zero Stars" - Austrian Painter
+              </li>
+            </ul>
           </div>
+
         </div>
 
       </div>
@@ -181,17 +185,36 @@
     <style>
     .image-grid {
       display: grid;
-      grid: repeat(2, 25%) / auto-flow 25%;
       position: relative;
+      row-gap: 5%;
+      grid-auto-flow: row;
     }
+
+    .image-grid-2 {
+      grid-template-columns: 50% 50%;
+    }
+
+    @media (min-width: 768px) { 
+      .image-grid-md-3 {
+        grid-template-columns: 33% 33% 33%;
+      }
+    }
+    @media (min-width: 992) { 
+      .image-grid-lg-4 {
+        grid-template-columns: 25% 25% 25% 25%;
+      }
+    }
+
     .image-grid-item {
-      --image-width: 100%;
+      --image-width: 80%;
       width: var(--image-width);
-      transition: width .25s, margin-bottom .25s;
+      transition: width .25s;
       position: relative;
-      margin-bottom:  5rem;
+      margin-bottom: 25%;
+      display: block;
     }
-    .image-grid-item:hover {
+
+    .image-grid-input:checked + .image-grid-item {
       width: calc(var(--image-width) * 1.25);
       margin-bottom: 0;
       z-index: 1;
@@ -199,102 +222,73 @@
       left: 50%;
       transform: translate(-50%, -50%)
     }
-    .image-grid-item:hover .bg-dark {
+    .image-grid-input{
+      display: none;
+    }
+    .image-grid-input:checked + .image-grid-item .bg-dark {
       display: none;
     }
     </style>
 
 
-    <section id="work">
+    <section id="work" class="container">
       <h1> Work </h1>
-      <div class="image-grid list-unstyled">
-        <div class="image-grid-item">
-          <img src="./assets/apple.png" alt="Apple" class="img-thumbnail">
-          <span class="position-absolute start-0 text-light h-100 w-100 bg-dark bg-opacity-50"> 
-            <span class="position-absolute start-50 top-50 text-light h-100 w-100"> 
-              Apple
-            </span>
-          </span>
-        </div>
-        <li class="image-grid-item">
-          <img src="./assets/apple.png" alt="Apple" class="img-thumbnail">
-          <span class="position-absolute start-0 text-light h-100 w-100 bg-dark bg-opacity-50"> 
-            <span class="position-absolute start-50 top-50 text-light h-100 w-100"> 
-              Apple
-            </span>
-          </span>
-        </li>
+      <div class="image-grid image-grid-2 image-grid-md-3 image-grid-lg-4 flex-row justify-content-center">
 
-        <li class="image-grid-item">
+        <input class="image-grid-input" type="radio" name="work-image-grid" id="work-apple" value="work-apple">
+        <label class="image-grid-item" for="work-apple">
           <img src="./assets/apple.png" alt="Apple" class="img-thumbnail">
           <span class="position-absolute start-0 text-light h-100 w-100 bg-dark bg-opacity-50"> 
             <span class="position-absolute start-50 top-50 text-light h-100 w-100"> 
               Apple
             </span>
           </span>
-        </li>
-        <li class="image-grid-item">
-          <img src="./assets/apple.png" alt="Apple" class="img-thumbnail">
-          <span class="position-absolute start-0 text-light h-100 w-100 bg-dark bg-opacity-50"> 
-            <span class="position-absolute start-50 top-50 text-light h-100 w-100"> 
-              Apple
-            </span>
-          </span>
-        </li>
+        </label>
 
-
-        <li class="image-grid-item">
-          <img src="./assets/apple.png" alt="Apple" class="img-thumbnail">
+        <input class="image-grid-input" type="radio" name="work-image-grid" id="work-plutotv" value="work-plutotv">
+        <label class="image-grid-item" for="work-plutotv">
+          <img src="./assets/pluto.png" alt="PlutoTV" class="img-thumbnail">
           <span class="position-absolute start-0 text-light h-100 w-100 bg-dark bg-opacity-50"> 
             <span class="position-absolute start-50 top-50 text-light h-100 w-100"> 
-              Apple
+              PlutoTV
             </span>
           </span>
-        </li>
-        <li class="image-grid-item">
-          <img src="./assets/apple.png" alt="Apple" class="img-thumbnail">
+        </label>
+
+        <input class="image-grid-input" type="radio" name="work-image-grid" id="work-flosports" value="work-flosports">
+        <label class="image-grid-item" for="work-flosports">
+          <img src="./assets/flosports.png" alt="FloSports" class="img-thumbnail">
           <span class="position-absolute start-0 text-light h-100 w-100 bg-dark bg-opacity-50"> 
             <span class="position-absolute start-50 top-50 text-light h-100 w-100"> 
-              Apple
+              FloSports
             </span>
           </span>
-        </li>
+        </label>
 
-        <li class="col-4">Pluto.tv</li>
-        <li class="col-4">Flosports</li>
-        <li class="col-4">Jobcorps</li>
-        <li class="col-4">Permanent</li>
+        <input class="image-grid-input" type="radio" name="work-image-grid" id="work-jobcorps" value="work-jobcorps">
+        <label class="image-grid-item" for="work-jobcorps">
+          <img src="./assets/jobcorps.png" alt="Jobcorps" class="img-thumbnail">
+          <span class="position-absolute start-0 text-light h-100 w-100 bg-dark bg-opacity-50"> 
+            <span class="position-absolute start-50 top-50 text-light h-100 w-100"> 
+              Jobcorps
+            </span>
+          </span>
+        </label>
+
+        <input class="image-grid-input" type="radio" name="work-image-grid" id="work-permanent" value="work-permanent">
+        <label class="image-grid-item" for="work-permanent">
+          <img src="./assets/permanent.png" alt="permanent" class="img-thumbnail">
+          <span class="position-absolute start-0 text-light h-100 w-100 bg-dark bg-opacity-50"> 
+            <span class="position-absolute start-50 top-50 text-light h-100 w-100"> 
+              permanent.org
+            </span>
+          </span>
+        </label>
+
       </div>
     </section>
 
 
-    <!-- <section id="work" class="bg-light container"> -->
-    <!--   <h1> -->
-    <!--   Work -->
-    <!--   </h1> -->
-    <!--   <ul class="row list-unstyled"> -->
-    <!--     <li class="col-4 position-relative mx-3 px-0 thumbnail-wrapper"> -->
-    <!--       <img src="./assets/apple.png" alt="Apple" class="img-thumbnail"> -->
-    <!--       <span class="position-absolute start-0 text-light h-100 w-100 bg-dark bg-opacity-50">  -->
-    <!--         <span class="position-absolute start-50 top-50 text-light h-100 w-100">  -->
-    <!--           Apple -->
-    <!--         </span> -->
-    <!--       </span> -->
-    <!--     </li> -->
-    <!--     <li class="col-4 position-relative mx-3 px-0 thumbnail-wrapper"> -->
-    <!--       <img src="./assets/apple.png" alt="Apple" class="img-thumbnail"> -->
-    <!--       <span class="position-absolute start-0 text-light h-100 w-100 bg-dark bg-opacity-50">  -->
-    <!--         <span class="position-absolute start-50 top-50 text-light h-100 w-100">  -->
-    <!--           Apple -->
-    <!--         </span> -->
-    <!--       </span> -->
-    <!--     </li> -->
-    <!--     <li class="col-4">Pluto.tv</li> -->
-    <!--     <li class="col-4">Flosports</li> -->
-    <!--     <li class="col-4">Jobcorps</li> -->
-    <!--     <li class="col-4">Permanent</li> -->
-    <!--   </ul> -->
-    <!-- </section> -->
 
     <section id="resume" class="vh-50 bg-transparent text-light text-center parallax" 
 
@@ -304,14 +298,6 @@
     </section>
 
 
-    <section id="testimonials" class="bg-light">
-      <h1>Testimonials</h1>
-      <ul>
-        <li>
-          "Worst Ever. Zero Stars" - Austrian Painter
-        </li>
-      </ul>
-    </section>
     <section id="contact" class="bg-light">
       <h1>Contact</h1>
       <a href="mailto:webmaster@matttelliott.com">E-Mail</a>
