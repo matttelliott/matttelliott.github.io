@@ -110,31 +110,31 @@
 
         <ul class="nav flex-md-column justify-content-between">
           <li class="nav-item">
-              <label class="nav-link active tab-label" for="option1">Option 1</label>
+              <label class="nav-link tab-label" for="tab-contact">Contact</label>
           </li>
           <li class="nav-item">
-              <label class="nav-link tab-label" for="option2">Option 2</label>
+              <label class="nav-link active tab-label" for="tab-about">About</label>
           </li>
           <li class="nav-item">
               <label class="nav-link tab-label" for="option3">Option 3</label>
           </li>
         </ul>
         
-        <div class="bg-primary">
+        <div>
+
+          <input checked class="tab-input" type="radio" name="about-tabs" id="tab-contact" value="tab-contact">
+          <div class="tab-content slide-from-left">
+            <h1>Contact</h1>
+            <h2>contact@matttelliott.com</h2>
+          </div>
           
-          <input checked class="tab-input" type="radio" name="about-tabs" id="option1" value="option1" class="">
+          <input class="tab-input" type="radio" name="about-tabs" id="tab-about" value="tab-about">
           <div class="tab-content slide-from-left">
             <h1>About Me</h1>
             <h2>Bad Ass Dude</h2>
           </div>
 
-          <input class="tab-input" type="radio" name="about-tabs" id="option2" value="option2" class="">
-          <div class="tab-content slide-from-left">
-            <h1>Option 2</h1>
-            <h2>Bad Ass Dude</h2>
-          </div>
-
-          <input class="tab-input" type="radio" name="about-tabs" id="option3" value="option3" class="">
+          <input class="tab-input" type="radio" name="about-tabs" id="option3" value="option3">
           <div class="tab-content slide-from-left">
             <h1>Option 3</h1>
             <h2>Bad Ass Dude</h2>
@@ -178,12 +178,45 @@
       </div>
     </section>
 
-    <section id="work" class="bg-light container">
-      <h1>
-      Work
-      </h1>
-      <ul class="row list-unstyled">
-        <li class="col-4 position-relative mx-3 px-0 thumbnail-wrapper">
+    <style>
+    .image-grid {
+      display: grid;
+      grid: repeat(2, 25%) / auto-flow 25%;
+      position: relative;
+    }
+    .image-grid-item {
+      --image-width: 100%;
+      width: var(--image-width);
+      transition: width .25s, margin-bottom .25s;
+      position: relative;
+      margin-bottom:  5rem;
+    }
+    .image-grid-item:hover {
+      width: calc(var(--image-width) * 1.25);
+      margin-bottom: 0;
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%)
+    }
+    .image-grid-item:hover .bg-dark {
+      display: none;
+    }
+    </style>
+
+
+    <section id="work">
+      <h1> Work </h1>
+      <div class="image-grid list-unstyled">
+        <div class="image-grid-item">
+          <img src="./assets/apple.png" alt="Apple" class="img-thumbnail">
+          <span class="position-absolute start-0 text-light h-100 w-100 bg-dark bg-opacity-50"> 
+            <span class="position-absolute start-50 top-50 text-light h-100 w-100"> 
+              Apple
+            </span>
+          </span>
+        </div>
+        <li class="image-grid-item">
           <img src="./assets/apple.png" alt="Apple" class="img-thumbnail">
           <span class="position-absolute start-0 text-light h-100 w-100 bg-dark bg-opacity-50"> 
             <span class="position-absolute start-50 top-50 text-light h-100 w-100"> 
@@ -191,7 +224,8 @@
             </span>
           </span>
         </li>
-        <li class="col-4 position-relative mx-3 px-0 thumbnail-wrapper">
+
+        <li class="image-grid-item">
           <img src="./assets/apple.png" alt="Apple" class="img-thumbnail">
           <span class="position-absolute start-0 text-light h-100 w-100 bg-dark bg-opacity-50"> 
             <span class="position-absolute start-50 top-50 text-light h-100 w-100"> 
@@ -199,12 +233,68 @@
             </span>
           </span>
         </li>
+        <li class="image-grid-item">
+          <img src="./assets/apple.png" alt="Apple" class="img-thumbnail">
+          <span class="position-absolute start-0 text-light h-100 w-100 bg-dark bg-opacity-50"> 
+            <span class="position-absolute start-50 top-50 text-light h-100 w-100"> 
+              Apple
+            </span>
+          </span>
+        </li>
+
+
+        <li class="image-grid-item">
+          <img src="./assets/apple.png" alt="Apple" class="img-thumbnail">
+          <span class="position-absolute start-0 text-light h-100 w-100 bg-dark bg-opacity-50"> 
+            <span class="position-absolute start-50 top-50 text-light h-100 w-100"> 
+              Apple
+            </span>
+          </span>
+        </li>
+        <li class="image-grid-item">
+          <img src="./assets/apple.png" alt="Apple" class="img-thumbnail">
+          <span class="position-absolute start-0 text-light h-100 w-100 bg-dark bg-opacity-50"> 
+            <span class="position-absolute start-50 top-50 text-light h-100 w-100"> 
+              Apple
+            </span>
+          </span>
+        </li>
+
         <li class="col-4">Pluto.tv</li>
         <li class="col-4">Flosports</li>
         <li class="col-4">Jobcorps</li>
         <li class="col-4">Permanent</li>
-      </ul>
+      </div>
     </section>
+
+
+    <!-- <section id="work" class="bg-light container"> -->
+    <!--   <h1> -->
+    <!--   Work -->
+    <!--   </h1> -->
+    <!--   <ul class="row list-unstyled"> -->
+    <!--     <li class="col-4 position-relative mx-3 px-0 thumbnail-wrapper"> -->
+    <!--       <img src="./assets/apple.png" alt="Apple" class="img-thumbnail"> -->
+    <!--       <span class="position-absolute start-0 text-light h-100 w-100 bg-dark bg-opacity-50">  -->
+    <!--         <span class="position-absolute start-50 top-50 text-light h-100 w-100">  -->
+    <!--           Apple -->
+    <!--         </span> -->
+    <!--       </span> -->
+    <!--     </li> -->
+    <!--     <li class="col-4 position-relative mx-3 px-0 thumbnail-wrapper"> -->
+    <!--       <img src="./assets/apple.png" alt="Apple" class="img-thumbnail"> -->
+    <!--       <span class="position-absolute start-0 text-light h-100 w-100 bg-dark bg-opacity-50">  -->
+    <!--         <span class="position-absolute start-50 top-50 text-light h-100 w-100">  -->
+    <!--           Apple -->
+    <!--         </span> -->
+    <!--       </span> -->
+    <!--     </li> -->
+    <!--     <li class="col-4">Pluto.tv</li> -->
+    <!--     <li class="col-4">Flosports</li> -->
+    <!--     <li class="col-4">Jobcorps</li> -->
+    <!--     <li class="col-4">Permanent</li> -->
+    <!--   </ul> -->
+    <!-- </section> -->
 
     <section id="resume" class="vh-50 bg-transparent text-light text-center parallax" 
 
