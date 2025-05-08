@@ -1,0 +1,120 @@
+.z-auto {
+  z-index: auto !important;
+}
+.vh-50 {
+  height: 50vh;
+}
+
+.vh-75 {
+  height: 75vh;
+}
+
+@property --fucks {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: true;
+}
+
+@property --nice {
+  syntax: "<string>";
+  initial-value: "";
+  inherits: true;
+}
+
+@keyframes count-fucks {
+  0% {
+    --fucks: 0;
+    --nice: "";
+  }
+  50% {
+    --fucks: 69;
+    --nice: "";
+  }
+  60% {
+    --fucks: 69;
+    --nice: " NICE!";
+  }
+  65% {
+    --fucks: 69;
+    --nice: "";
+  }
+  70% {
+    --fucks: 69;
+    --nice: " NICE!";
+  }
+  75% {
+    --fucks: 69;
+    --nice: "";
+  }
+  80% {
+    --fucks: 69;
+    --nice: " NICE!";
+  }
+  85% {
+    --fucks: 69;
+    --nice: "";
+  }
+  90% {
+    --fucks: 69;
+    --nice: " NICE!";
+  }
+  95% {
+    --fucks: 69;
+    --nice: "";
+  }
+  100% {
+    --fucks: 69;
+    --nice: " NICE!";
+  }
+}
+
+.fucks-progress {
+  width: calc(var(--fucks) * 1%);
+  counter-reset: fucks var(--fucks);
+  animation: count-fucks;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  content: counter(fucks) var(--nice);
+}
+
+.fucks-progress::after {
+  content: counter(fucks) var(--nice);
+}
+
+.tab-input {
+  display: none;
+}
+
+.tab-input:checked + .tab-label {
+  display: block;
+  color: var(--bs-primary);
+  border-bottom: 1px solid var(--bs-primary);
+}
+
+.tab-input:checked + .tab-content {
+  display: block;
+}
+
+.slide-from-left {
+  position: absolute;
+  left: -200%;
+  opacity: 0;
+  transition:
+    left 1.5s ease-out,
+    opacity 0.2s;
+}
+
+.tab-input:checked + .tab-content.slide-from-left {
+  left: 0%;
+  opacity: 1;
+  transition:
+    left 1.5s ease-out,
+    opacity 2s ease-in;
+}
+
+.parallax {
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}

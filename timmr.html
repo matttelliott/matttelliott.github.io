@@ -7,125 +7,7 @@
 
     <link rel="stylesheet" href="./assets/stars.css" />
     <link rel="stylesheet" href="./assets/image-grid.css" />
-    <style>
-      .vh-50 {
-        height: 50vh;
-      }
-
-      .vh-75 {
-        height: 75vh;
-      }
-
-      @property --fucks {
-        syntax: "<integer>";
-        initial-value: 0;
-        inherits: true;
-      }
-
-      @property --nice {
-        syntax: "<string>";
-        initial-value: "";
-        inherits: true;
-      }
-
-      @keyframes count-fucks {
-        0% {
-          --fucks: 0;
-          --nice: "";
-        }
-        50% {
-          --fucks: 69;
-          --nice: "";
-        }
-        60% {
-          --fucks: 69;
-          --nice: " NICE!";
-        }
-        65% {
-          --fucks: 69;
-          --nice: "";
-        }
-        70% {
-          --fucks: 69;
-          --nice: " NICE!";
-        }
-        75% {
-          --fucks: 69;
-          --nice: "";
-        }
-        80% {
-          --fucks: 69;
-          --nice: " NICE!";
-        }
-        85% {
-          --fucks: 69;
-          --nice: "";
-        }
-        90% {
-          --fucks: 69;
-          --nice: " NICE!";
-        }
-        95% {
-          --fucks: 69;
-          --nice: "";
-        }
-        100% {
-          --fucks: 69;
-          --nice: " NICE!";
-        }
-      }
-
-      .fucks-progress {
-        width: calc(var(--fucks) * 1%);
-        counter-reset: fucks var(--fucks);
-        animation: count-fucks;
-        animation-duration: 10s;
-        animation-iteration-count: infinite;
-        content: counter(fucks) var(--nice);
-      }
-
-      .fucks-progress::after {
-        content: counter(fucks) var(--nice);
-      }
-
-      .tab-input {
-        display: none;
-      }
-
-      .tab-input:checked + .tab-label {
-        display: block;
-        color: var(--bs-primary);
-        border-bottom: 1px solid var(--bs-primary);
-      }
-
-      .tab-input:checked + .tab-content {
-        display: block;
-      }
-
-      .slide-from-left {
-        position: absolute;
-        left: -200%;
-        opacity: 0;
-        transition:
-          left 1.5s ease-out,
-          opacity 0.2s;
-      }
-
-      .tab-input:checked + .tab-content.slide-from-left {
-        left: 0%;
-        opacity: 1;
-        transition:
-          left 1.5s ease-out,
-          opacity 2s ease-in;
-      }
-
-      .parallax {
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-      }
-    </style>
+    <link rel="stylesheet" href="./assets/timmr.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -151,7 +33,7 @@
 
     <section
       id="hero"
-      class="bg-light text-light d-flex flex-column align-items-center justify-content-center vh-100"
+      class="overflow-hidden bg-light text-light d-flex flex-column align-items-center justify-content-center vh-100"
       style="background-image: url(&quot;./assets/galaxy.jpg&quot;)"
     >
       <div class="stars stars-1"></div>
@@ -165,7 +47,7 @@
 
     <section
       id="about"
-      class="z-1 position-relative container-fluid d-flex flex-column flex-md-row vh-75"
+      class="position-relative container-fluid d-flex flex-column flex-md-row vh-75"
     >
       <ul class="nav d-flex flex-row flex-md-column justify-content-between">
         <li class="nav-item">
@@ -353,7 +235,7 @@
             class="position-absolute start-0 text-light h-100 w-100 bg-dark bg-opacity-50"
           >
             <span
-              class="position-absolute start-50 top-50 text-light h-100 w-100"
+              class="d-flex justify-content-center align-items-center text-light h-100 w-100"
             >
               Apple
             </span>
@@ -373,7 +255,7 @@
             class="position-absolute start-0 text-light h-100 w-100 bg-dark bg-opacity-50"
           >
             <span
-              class="position-absolute start-50 top-50 text-light h-100 w-100"
+              class="d-flex justify-content-center align-items-center text-light h-100 w-100"
             >
               PlutoTV
             </span>
@@ -397,7 +279,7 @@
             class="position-absolute start-0 text-light h-100 w-100 bg-dark bg-opacity-50"
           >
             <span
-              class="position-absolute start-50 top-50 text-light h-100 w-100"
+              class="d-flex justify-content-center align-items-center text-light h-100 w-100"
             >
               FloSports
             </span>
@@ -421,7 +303,7 @@
             class="position-absolute start-0 text-light h-100 w-100 bg-dark bg-opacity-50"
           >
             <span
-              class="position-absolute start-50 top-50 text-light h-100 w-100"
+              class="d-flex justify-content-center align-items-center text-light h-100 w-100"
             >
               Jobcorps
             </span>
@@ -445,7 +327,7 @@
             class="position-absolute start-0 text-light h-100 w-100 bg-dark bg-opacity-50"
           >
             <span
-              class="position-absolute start-50 top-50 text-light h-100 w-100"
+              class="d-flex justify-content-center align-items-center text-light h-100 w-100"
             >
               permanent.org
             </span>
