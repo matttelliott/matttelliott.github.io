@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -12,10 +12,14 @@
         height: 50vh;
       }
 
+      .vh-75 {
+        height: 75vh;
+      }
+
       @property --fucks {
         syntax: "<integer>";
         initial-value: 0;
-        inherits: false;
+        inherits: true;
       }
 
       @property --nice {
@@ -71,13 +75,16 @@
         }
       }
 
-      .fucks-counter {
+      .fucks-progress {
+        width: calc(var(--fucks) * 1%);
         counter-reset: fucks var(--fucks);
         animation: count-fucks;
         animation-duration: 10s;
+        animation-iteration-count: infinite;
+        content: counter(fucks) var(--nice);
       }
 
-      .fucks-counter::after {
+      .fucks-progress::after {
         content: counter(fucks) var(--nice);
       }
 
@@ -97,14 +104,15 @@
 
       .slide-from-left {
         position: absolute;
-        left: -35%;
+        left: -200%;
         opacity: 0;
         transition:
           left 1.5s ease-out,
           opacity 0.2s;
       }
+
       .tab-input:checked + .tab-content.slide-from-left {
-        left: 35%;
+        left: 0%;
         opacity: 1;
         transition:
           left 1.5s ease-out,
@@ -127,7 +135,7 @@
   </head>
   <body>
     <header
-      class="navbar d-flex justify-content-between top-0 bg-dark text-light position-sticky z-2 container-fluid"
+      class="z-1 navbar d-flex justify-content-between top-0 bg-dark text-light position-sticky container-fluid"
     >
       <a class="flex-grow-1 navbar-brand text-light" href="/">
         Matttelliott.com
@@ -136,14 +144,14 @@
       <nav class="d-flex justify-content-around flex-grow-1">
         <a href="#about"> About </a>
         <a href="#cats"> Cats </a>
-        <a href="#work"> work </a>
+        <a href="#work"> Work </a>
         <a href="#contact"> Contact </a>
       </nav>
     </header>
 
     <section
       id="hero"
-      class="position-relative bg-light text-light d-flex flex-column align-items-center justify-content-center vh-100"
+      class="bg-light text-light d-flex flex-column align-items-center justify-content-center vh-100"
       style="background-image: url(&quot;./assets/galaxy.jpg&quot;)"
     >
       <div class="stars stars-1"></div>
@@ -157,37 +165,35 @@
 
     <section
       id="about"
-      class="position-relative bg-light d-flex flex-row align-items-center justify-content-center vh-50 z-1"
+      class="z-1 position-relative container-fluid d-flex flex-column flex-md-row vh-75"
     >
-      <div class="d-flex flex-column flex-md-row container">
-        <ul class="nav flex-md-column justify-content-between">
-          <li class="nav-item">
-            <label class="nav-link active tab-label" for="tab-about"
-              >About</label
-            >
-          </li>
-          <li class="nav-item">
-            <label class="nav-link tab-label" for="tab-testimonials"
-              >Testimonials</label
-            >
-          </li>
-          <li class="nav-item">
-            <label class="nav-link tab-label" for="tab-other">other</label>
-          </li>
-        </ul>
+      <ul class="nav d-flex flex-row flex-md-column justify-content-between">
+        <li class="nav-item">
+          <label class="nav-link active tab-label" for="tab-about">About</label>
+        </li>
+        <li class="nav-item">
+          <label class="nav-link tab-label" for="tab-testimonials"
+            >Testimonials</label
+          >
+        </li>
+        <li class="nav-item">
+          <label class="nav-link tab-label" for="tab-resume">Resume</label>
+        </li>
+      </ul>
 
+      <div class="position-relative w-100">
         <input
           checked
           class="tab-input"
           type="radio"
           name="about-tabs"
-          id="tab-other"
-          value="tab-other"
+          id="tab-resume"
+          value="tab-resume"
         />
         <div
           class="tab-content slide-from-left d-flex flex-row justify-content-between"
         >
-          <h1>OTHER</h1>
+          <h1>Resume</h1>
         </div>
 
         <input
@@ -198,8 +204,8 @@
           value="tab-about"
         />
         <div class="tab-content slide-from-left">
-          <h1>About Me</h1>
-          <h2>Bad Ass Dude</h2>
+          <h1>My Name Is Matt</h1>
+          <h2>I Am Bad Ass Dude</h2>
         </div>
 
         <input
@@ -209,10 +215,51 @@
           id="tab-testimonials"
           value="tab-testimonials"
         />
-        <div class="tab-content slide-from-left">
+        <div class="tab-content slide-from-left w-100">
           <h1>Testimonials</h1>
-          <ul>
-            <li>"Worst Ever. Zero Stars" - Austrian Painter</li>
+          <ul class="list-unstyled w-100">
+            <li
+              class="my-3 d-flex flex-row w-100 w-md-50 border border-light-subtle rounded"
+            >
+              <img
+                src="./assets/cats.jpeg"
+                class="rounded-circle mx-3"
+                style="width: 4em; height: 4em"
+              />
+
+              <div class="flex-column">
+                <p>"Worst Ever. Zero Stars"</p>
+                <span>- Austrian Painter </span>
+              </div>
+            </li>
+            <li
+              class="my-3 d-flex flex-row w-100 w-md-50 border border-light-subtle rounded"
+            >
+              <img
+                src="./assets/cats.jpeg"
+                class="rounded-circle mx-3"
+                style="width: 4em; height: 4em"
+              />
+
+              <div class="flex-column">
+                <p>"Worst Ever. Zero Stars"</p>
+                <span>- Austrian Painter </span>
+              </div>
+            </li>
+            <li
+              class="my-3 d-flex flex-row w-100 w-md-50 border border-light-subtle rounded"
+            >
+              <img
+                src="./assets/cats.jpeg"
+                class="rounded-circle mx-3"
+                style="width: 4em; height: 4em"
+              />
+
+              <div class="flex-column">
+                <p>"Worst Ever. Zero Stars"</p>
+                <span>- Austrian Painter </span>
+              </div>
+            </li>
           </ul>
         </div>
       </div>
@@ -228,70 +275,62 @@
       </a>
     </section>
 
-    <section id="stats" class="vh-50 bg-light container-fluid w-100">
+    <section id="stats" class="vh-50 container-fluid w-100 row">
       <h1 class="text-center w-100">Stats</h1>
-      <div
-        class="progress d-inline-block mx-3"
-        style="width: 40%"
-        role="progressbar"
-        aria-label="Basic example"
-        aria-valuenow="0"
-        aria-valuemin="0"
-        aria-valuemax="100"
-      >
-        <div class="progress-bar bg-danger" style="width: 85%">Health</div>
-      </div>
-      <div
-        class="progress d-inline-block mx-3"
-        style="width: 40%"
-        role="progressbar"
-        aria-label="Basic example"
-        aria-valuenow="0"
-        aria-valuemin="0"
-        aria-valuemax="100"
-      >
-        <div class="progress-bar bg-primary" style="width: 75%">Mana</div>
-      </div>
-
-      <div
-        class="progress d-inline-block mx-3"
-        style="width: 40%"
-        role="progressbar"
-        aria-label="Basic example"
-        aria-valuenow="0"
-        aria-valuemin="0"
-        aria-valuemax="100"
-      >
-        Fucks Given: 0
-        <div class="progress-bar bg-info" style="width: 5%"></div>
-      </div>
-
-      <h1 class="fucks-counter">Fucks Counter:</h1>
-      <div
-        class="progress d-inline-block mx-3"
-        style="width: 40%"
-        role="progressbar"
-        aria-label="Basic example"
-        aria-valuenow="0"
-        aria-valuemin="0"
-        aria-valuemax="100"
-      >
-        <div class="progress-bar bg-success" style="width: 100%">
-          Fucks Received: 69 NICE!
+      <div class="col-6">
+        Health:
+        <div
+          class="progress d-inline-block w-100"
+          role="progressbar"
+          aria-label="Basic example"
+          aria-valuenow="0"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <div class="progress-bar bg-danger" style="width: 85%">Health</div>
         </div>
       </div>
 
-      <div
-        class="progress d-inline-block mx-3"
-        style="width: 40%"
-        role="progressbar"
-        aria-label="Basic example"
-        aria-valuenow="0"
-        aria-valuemin="0"
-        aria-valuemax="100"
-      >
-        <div class="progress-bar bg-warning" style="width: 80%">
-          Pianist: Huge
+      <div class="col-6">
+        Mana:
+        <div
+          class="progress d-inline-block w-100"
+          role="progressbar"
+          aria-label="Basic example"
+          aria-valuenow="0"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <div class="progress-bar bg-primary" style="width: 75%">Mana</div>
+        </div>
+      </div>
+
+      <div class="col-6">
+        Fucks Given:
+        <div
+          class="progress d-inline-block w-100"
+          role="progressbar"
+          aria-label="Basic example"
+          aria-valuenow="0"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <div class="bg-info text-center" style="width: 0%">Zero</div>
+        </div>
+      </div>
+
+      <div class="col-6">
+        Fucks Recieved:
+        <div
+          class="progress d-inline-block w-100"
+          style="width: 40%"
+          role="progressbar"
+          aria-label="Basic example"
+          aria-valuenow="0"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <div class="progress-bar bg-success fucks-progress"></div>
         </div>
       </div>
     </section>

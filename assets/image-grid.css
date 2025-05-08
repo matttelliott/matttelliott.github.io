@@ -1,62 +1,62 @@
-    .thumbnail-wrapper {
-      transition: width .5s;
-    }
+.thumbnail-wrapper {
+  transition: width 0.5s;
+}
 
-    .thumbnail-wrapper:hover {
-      z-index: 2;
-      position: absolute !important;
-      width: 50vw !important;
-    }
+.thumbnail-wrapper:hover {
+  z-index: 2;
+  position: absolute !important;
+  width: 50vw !important;
+}
 
-    .thumbnail-wrapper:hover .bg-dark {
-      display: none;
-    }
+.thumbnail-wrapper:hover .bg-dark {
+  display: none;
+}
 
-    .image-grid {
-      display: grid;
-      position: relative;
-      row-gap: 5%;
-      grid-auto-flow: row;
-    }
+.image-grid {
+  display: grid;
+  position: relative;
+  row-gap: 5%;
+  grid-auto-flow: row;
+}
 
-    .image-grid-2 {
-      grid-template-columns: 50% 50%;
-    }
+.image-grid-2 {
+  grid-template-columns: 50% 50%;
+}
 
-    @media (min-width: 768px) {
-      .image-grid-md-3 {
-        grid-template-columns: 33% 33% 33%;
-      }
-    }
+@media (min-width: 768px) {
+  .image-grid-md-3 {
+    grid-template-columns: 33% 33% 33%;
+  }
+}
 
-    @media (min-width: 992) {
-      .image-grid-lg-4 {
-        grid-template-columns: 25% 25% 25% 25%;
-      }
-    }
+@media (min-width: 992) {
+  .image-grid-lg-4 {
+    grid-template-columns: 25% 25% 25% 25%;
+  }
+}
 
-    .image-grid-item {
-      --image-width: 80%;
-      width: var(--image-width);
-      transition: width .25s;
-      position: relative;
-      margin-bottom: 25%;
-      display: block;
-    }
+.image-grid-item {
+  --image-width: 80%;
+  width: var(--image-width);
+  transition: width 0.25s;
+  position: relative;
+  margin-bottom: 5em;
+  display: block;
+}
 
-    .image-grid-input:checked+.image-grid-item {
-      width: calc(var(--image-width) * 1.25);
-      margin-bottom: 0;
-      z-index: 1;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%)
-    }
+.image-grid-input:checked + .image-grid-item {
+  width: calc(var(--image-width) * 1.25);
+  margin-bottom: 0;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-    .image-grid-input {
-      display: none;
-    }
+.image-grid-input {
+  display: none;
+}
 
-    .image-grid-input:checked+.image-grid-item .bg-dark {
-      display: none;
-    }
+.image-grid-input:checked + .image-grid-item .bg-dark {
+  display: none;
+}
