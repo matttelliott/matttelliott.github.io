@@ -15,8 +15,9 @@
 .image-grid {
   display: grid;
   position: relative;
-  row-gap: 5%;
   grid-auto-flow: row;
+  place-items: center;
+  grid-template-rows: repeat(2fr);
 }
 
 .image-grid-2 {
@@ -36,27 +37,22 @@
 }
 
 .image-grid-item {
-  --image-width: 80%;
-  width: var(--image-width);
-  transition: width 0.25s;
+  margin-bottom: 20%;
+  width: 80%;
+  transition: scale 0.5s;
   position: relative;
-  margin-bottom: 5em;
   display: block;
 }
 
-.image-grid-input:checked + .image-grid-item {
-  width: calc(var(--image-width) * 1.25);
-  margin-bottom: 0;
+.image-grid-item:hover {
+  scale: 1.5;
   z-index: 1;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .image-grid-input {
   display: none;
 }
 
-.image-grid-input:checked + .image-grid-item .bg-dark {
+.image-grid-item:hover span {
   display: none;
 }
