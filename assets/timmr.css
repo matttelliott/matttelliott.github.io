@@ -1,6 +1,13 @@
 .z-auto {
   z-index: auto !important;
 }
+
+@media (min-width: 768px) {
+  .w-md-75 {
+    width: 75% !important;
+  }
+}
+
 .vh-50 {
   height: 50vh;
 }
