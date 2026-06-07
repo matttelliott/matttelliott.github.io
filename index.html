@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>timmr</title>
+    <title>Matt T Elliott</title>
 
     <link rel="stylesheet" href="./assets/stars.css" />
     <link rel="stylesheet" href="./assets/image-grid.css" />
@@ -12,6 +12,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/matttelliott/tokyonight.scss/tokyonight.css"
     />
+    <link rel="stylesheet" href="./assets/punch.css" />
   </head>
   <body>
     <style class="d-none">
@@ -51,6 +52,33 @@
       </nav>
     </header>
 
+    <div
+      class="marquee-bar bg-dark text-light border-bottom border-secondary"
+      aria-hidden="true"
+    >
+      <marquee scrollamount="5">
+        <span class="text-warning">⚠</span>
+        Incoming transmission 7A-449
+        <span class="text-secondary mx-3">·</span>
+        Clearance: Cosmic
+        <span class="text-secondary mx-3">·</span>
+        Agent status: Active
+        <span class="text-secondary mx-3">·</span>
+        Location: Redacted
+        <span class="text-secondary mx-3">·</span>
+        Threat level: Coffee
+        <span class="text-secondary mx-3">·</span>
+        Subject is better than most
+        <span class="text-secondary mx-3">·</span>
+        Do not engage
+        <span class="text-secondary mx-3">·</span>
+        Cats are watching
+        <span class="text-secondary mx-3">·</span>
+        End transmission
+        <span class="text-warning">⚠</span>
+      </marquee>
+    </div>
+
     <section
       id="hero"
       class="overflow-hidden text-light d-flex flex-column align-items-center justify-content-center vh-100"
@@ -63,7 +91,7 @@
 
       <div class="text-center" style="margin-top: -15%">
         <h1>Matt T Elliott</h1>
-        <h2>Intergalactic Secret Agent</h2>
+        <h2 class="blink-soft">Intergalactic Secret Agent</h2>
       </div>
     </section>
 
@@ -282,7 +310,7 @@
       </div>
     </section>
 
-    <section id="stats" class="vh-50 container-fluid w-100 row d-none">
+    <section id="stats" class="container-fluid w-100 row">
       <h1 class="text-center w-100">Stats</h1>
       <div class="col-6">
         Health:
@@ -372,5 +400,41 @@
         good in the last several years and I want to see how far it can go.
       </p>
     </footer>
+
+    <audio id="doom" src="./assets/e1m1.mp3" loop preload="metadata"></audio>
+    <button
+      id="doom-btn"
+      class="doom-toggle btn btn-outline-light btn-sm"
+      type="button"
+      aria-pressed="false"
+      aria-label="Play DOOM E1M1"
+    >
+      ▶ DOOM
+    </button>
+
+    <script>
+      (function () {
+        var btn = document.getElementById("doom-btn");
+        var audio = document.getElementById("doom");
+        if (!btn || !audio) return;
+        btn.addEventListener("click", function () {
+          var on = btn.getAttribute("aria-pressed") === "true";
+          if (on) {
+            audio.pause();
+            btn.setAttribute("aria-pressed", "false");
+            btn.textContent = "▶ DOOM";
+          } else {
+            var p = audio.play();
+            btn.setAttribute("aria-pressed", "true");
+            btn.textContent = "■ DOOM";
+            if (p && p.catch)
+              p.catch(function () {
+                btn.setAttribute("aria-pressed", "false");
+                btn.textContent = "▶ DOOM";
+              });
+          }
+        });
+      })();
+    </script>
   </body>
 </html>

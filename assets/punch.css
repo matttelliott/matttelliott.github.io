@@ -1,0 +1,43 @@
+/* punch.css — minimal layer; everything else uses Bootstrap utilities */
+
+/* Marquee container — sticks under the header */
+.marquee-bar {
+  position: sticky;
+  top: 56px;
+  z-index: 1;
+  letter-spacing: 0.05em;
+  font-size: 0.85rem;
+  padding: 0.4rem 0;
+}
+.marquee-bar marquee { display: block; }
+
+/* Subtitle blink — subtle opacity pulse, keeps existing color */
+.blink-soft {
+  animation: blink-soft 2s ease-in-out infinite;
+}
+@keyframes blink-soft {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.55; }
+}
+
+/* DOOM toggle — fixed bottom-right, sits above the sticky footer */
+.doom-toggle {
+  position: fixed;
+  bottom: 4.5rem;
+  right: 1rem;
+  z-index: 1000;
+  letter-spacing: 0.15em;
+}
+
+/* Stats — just give the un-hidden section breathing room */
+#stats { padding: 2rem 1rem 3rem; row-gap: 1rem; }
+
+/* Glitter on Matt's Cats button hover — content swap, no chrome change */
+a[href="./mattscats"]:hover,
+a[href="./mattscats"]:focus {
+  background-image: url("./glitter.gif");
+  background-size: cover;
+  background-position: center;
+  color: #fff !important;
+  text-shadow: 0 0 4px #000, 0 0 8px #000;
+}
